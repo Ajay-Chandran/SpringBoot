@@ -1,17 +1,17 @@
-package ajay.chandran.boot.springPoc.controller;
+package learn.concept.springboot.helloworld.controller;
 
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 
-public class HelloWorld {
+public class HelloWorldController {
     @RequestMapping("/")
     public String helloWorld(){
         return "Hello Spring world";
     }
-    @RequestMapping("/ajay")
-    public String helloAjay(){
-        return "Hello Spring Ajay";
+    @RequestMapping("/welcome")
+    public String helloWorldWelcome(){
+        return "Learning Spring: Welcome";
     }
     @GetMapping("/hello")
     public String helloName(@RequestParam(name="name", required = false, defaultValue = "Its me") String name)

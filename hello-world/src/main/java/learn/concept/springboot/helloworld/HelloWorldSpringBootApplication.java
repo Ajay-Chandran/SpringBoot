@@ -1,13 +1,13 @@
-package ajay.chandran.boot.springPoc;
+package learn.concept.springboot.helloworld;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringPocApplication {
+public class HelloWorldSpringBootApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringPocApplication.class, args);
+		SpringApplication.run(HelloWorldSpringBootApplication.class, args);
 	}
 
 }
