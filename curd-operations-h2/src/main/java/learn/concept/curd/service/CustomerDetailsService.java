@@ -16,7 +16,7 @@ public class CustomerDetailsService {
     @Autowired
     CustomerDetailsRepository repository;
      
-    public List<CustomerDetailsEntity> getAllEmployees()
+    public List<CustomerDetailsEntity> getAllCustomerDetails()
     {
         List<CustomerDetailsEntity> employeeList = repository.findAll();
          
@@ -27,7 +27,7 @@ public class CustomerDetailsService {
         }
     }
      
-    public CustomerDetailsEntity getEmployeeById(Long id) throws RecordNotFoundException
+    public CustomerDetailsEntity getCustomerDetailsById(Long id) throws RecordNotFoundException
     {
         Optional<CustomerDetailsEntity> customerDetails = repository.findById(id);
          
@@ -38,7 +38,7 @@ public class CustomerDetailsService {
         }
     }
      
-    public CustomerDetailsEntity createOrUpdateEmployee(CustomerDetailsEntity entity) throws RecordNotFoundException
+    public CustomerDetailsEntity createOrUpdateCustomerDetails(CustomerDetailsEntity entity) throws RecordNotFoundException
     {
         Optional<CustomerDetailsEntity> customerDetails = repository.findById(entity.getId());
          
@@ -59,7 +59,7 @@ public class CustomerDetailsService {
         }
     }
      
-    public void deleteEmployeeById(Long id) throws RecordNotFoundException
+    public void deleteCustomerDetailsById(Long id) throws RecordNotFoundException
     {
         Optional<CustomerDetailsEntity> customerDetails = repository.findById(id);
          

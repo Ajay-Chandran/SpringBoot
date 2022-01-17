@@ -25,8 +25,8 @@ public class CustomerController
     CustomerDetailsService service;
  
     @GetMapping
-    public ResponseEntity<List<CustomerDetailsEntity>> getAllEmployees() {
-        List<CustomerDetailsEntity> list = service.getAllEmployees();
+    public ResponseEntity<List<CustomerDetailsEntity>> getAllCustomerDetails() {
+        List<CustomerDetailsEntity> list = service.getAllCustomerDetails();
  
         return new ResponseEntity<List<CustomerDetailsEntity>>(list, new HttpHeaders(), HttpStatus.OK);
     }
@@ -34,7 +34,7 @@ public class CustomerController
     @GetMapping("/{id}")
     public ResponseEntity<CustomerDetailsEntity> getEmployeeById(@PathVariable("id") Long id)
                                                     throws RecordNotFoundException {
-        CustomerDetailsEntity entity = service.getEmployeeById(id);
+        CustomerDetailsEntity entity = service.getCustomerDetailsById(id);
  
         return new ResponseEntity<CustomerDetailsEntity>(entity, new HttpHeaders(), HttpStatus.OK);
     }
@@ -42,14 +42,14 @@ public class CustomerController
     @PostMapping
     public ResponseEntity<CustomerDetailsEntity> createOrUpdateEmployee(CustomerDetailsEntity customerDetails)
                                                     throws RecordNotFoundException {
-        CustomerDetailsEntity updated = service.createOrUpdateEmployee(customerDetails);
+        CustomerDetailsEntity updated = service.createOrUpdateCustomerDetails(customerDetails);
         return new ResponseEntity<CustomerDetailsEntity>(updated, new HttpHeaders(), HttpStatus.OK);
     }
  
     @DeleteMapping("/{id}")
     public HttpStatus deleteEmployeeById(@PathVariable("id") Long id)
                                                     throws RecordNotFoundException {
-        service.deleteEmployeeById(id);
+        service.deleteCustomerDetailsById(id);
         return HttpStatus.FORBIDDEN;
     }
  
